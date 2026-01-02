@@ -26,7 +26,7 @@ const features = [
 
 export function WhyChooseUsSection() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-secondary/30">
+    <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
       <div className="container px-4 md:px-6">
         <div className="space-y-4 text-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline">Why Choose Us?</h2>
@@ -36,7 +36,7 @@ export function WhyChooseUsSection() {
         </div>
         <div className="mx-auto grid items-start gap-8 pt-12 sm:max-w-4xl sm:grid-cols-2 md:gap-12 lg:max-w-5xl lg:grid-cols-4">
           {features.map((feature) => (
-            <div key={feature.title} className="grid gap-2 text-center">
+            <div key={feature.title} className="grid gap-2 text-center transition-transform duration-300 hover:scale-105">
               <div className="flex justify-center items-center mb-4">
                 <div className="rounded-full bg-primary/10 p-4 text-primary">
                   {React.cloneElement(feature.icon)}
