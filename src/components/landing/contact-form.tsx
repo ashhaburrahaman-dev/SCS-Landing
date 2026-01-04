@@ -18,7 +18,7 @@ function SubmitButton() {
   const { pending } = useFormStatus();
   return (
     <Button type="submit" className="w-full" disabled={pending} size="lg">
-      {pending ? "Submitting..." : "Notify Me When Open"}
+      {pending ? "জমা দেওয়া হচ্ছে..." : "খুললে আমাকে জানান"}
     </Button>
   );
 }
@@ -30,18 +30,18 @@ export function ContactForm() {
 
   useEffect(() => {
     if (state.message) {
-      if (state.errors) {
-        toast({
-          title: "Error",
-          description: state.message,
-          variant: "destructive",
-        });
-      } else {
-        toast({
-          title: "Success!",
-          description: state.message,
-          className: "bg-accent border-green-300 dark:bg-green-900 dark:border-green-700",
-        });
+      const isError = !!state.errors;
+      const title = isError ? "ত্রুটি" : "সাফল্য!";
+      const description = isError ? "আপনার ইনপুট চেক করে আবার চেষ্টা করুন।" : "ধন্যবাদ! আমরা খুললে আপনাকে জানাব।";
+
+      toast({
+        title: title,
+        description: description,
+        variant: isError ? "destructive" : "default",
+        className: !isError ? "bg-accent border-green-300 dark:bg-green-900 dark:border-green-700" : "",
+      });
+
+      if (!isError) {
         formRef.current?.reset();
       }
     }
@@ -50,18 +50,18 @@ export function ContactForm() {
   return (
     <form ref={formRef} action={formAction} className="space-y-4">
       <div className="space-y-2">
-        <Label htmlFor="name">Name</Label>
-        <Input id="name" name="name" placeholder="Your Name" required aria-describedby="name-error"/>
+        <Label htmlFor="name">নাম</Label>
+        <Input id="name" name="name" placeholder="আপনার নাম" required aria-describedby="name-error"/>
         {state?.errors?.name && <p id="name-error" className="text-sm text-destructive">{state.errors.name[0]}</p>}
       </div>
       <div className="space-y-2">
-        <Label htmlFor="mobile">Mobile Number</Label>
-        <Input id="mobile" name="mobile" type="tel" placeholder="10-digit mobile number" required aria-describedby="mobile-error"/>
+        <Label htmlFor="mobile">মোবাইল নম্বর</Label>
+        <Input id="mobile" name="mobile" type="tel" placeholder="১০-সংখ্যার মোবাইল নম্বর" required aria-describedby="mobile-error"/>
         {state?.errors?.mobile && <p id="mobile-error" className="text-sm text-destructive">{state.errors.mobile[0]}</p>}
       </div>
       <div className="space-y-2">
-        <Label htmlFor="service">What service are you waiting for? (Optional)</Label>
-        <Textarea id="service" name="service" placeholder="e.g., Fast internet, color printing..." />
+        <Label htmlFor="service">আপনি কোন পরিষেবার জন্য অপেক্ষা করছেন? (ঐচ্ছিক)</Label>
+        <Textarea id="service" name="service" placeholder="যেমন, দ্রুত ইন্টারনেট, রঙিন প্রিন্টিং..." />
          {state?.errors?.service && <p className="text-sm text-destructive">{state.errors.service[0]}</p>}
       </div>
       <SubmitButton />

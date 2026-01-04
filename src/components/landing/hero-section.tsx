@@ -15,21 +15,20 @@ export function HeroSection() {
               height={150}
               className="mx-auto"
             />
-            <p className="text-lg text-muted-foreground md:text-xl pt-4">Cyber Café & Digital Help Point</p>
+            <p className="text-lg text-muted-foreground md:text-xl pt-4">সাইবার ক্যাফে ও ডিজিটাল সহায়তা কেন্দ্র</p>
           </div>
           <div className="space-y-3 fade-in" style={{ animationDelay: '0.4s' }}>
             <p className="mx-auto max-w-[800px] text-2xl !leading-tight font-bold md:text-3xl text-primary/80">
-              Launching Soon in Narayanpur – Baduria
+              শীঘ্রই আসছে নারায়ণপুর – বাদুড়িয়াতে
             </p>
             <p className="mx-auto max-w-[800px] text-muted-foreground md:text-xl">
-              Internet, printing, online forms, job applications, recharges & all your daily digital needs under one
-              roof.
+              ইন্টারনেট, প্রিন্টিং, অনলাইন ফর্ম, চাকরির আবেদন, রিচার্জ এবং আপনার সমস্ত ডিজিটাল চাহিদা এক ছাদের নিচে।
             </p>
           </div>
           <div className="w-full max-w-sm space-x-2 pt-4 fade-in" style={{ animationDelay: '0.6s' }}>
             <Link href="#contact" passHref>
               <Button size="lg" className="w-full sm:w-auto">
-                Get Opening Updates
+                খোলার আপডেট পান
               </Button>
             </Link>
           </div>

@@ -17,8 +17,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['Orbitron', 'sans-serif'],
-        headline: ['Orbitron', 'sans-serif'],
+        body: ['"Hind Siliguri"', 'sans-serif'],
+        headline: ['"Hind Siliguri"', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {

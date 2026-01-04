@@ -4,27 +4,27 @@ import React from 'react';
 const services = [
   {
     icon: <Globe />,
-    title: 'Internet Browsing',
+    title: 'ইন্টারনেট ব্রাউজিং',
   },
   {
     icon: <Printer />,
-    title: 'Printing & Scan',
+    title: 'প্রিন্টিং এবং স্ক্যান',
   },
   {
     icon: <FileText />,
-    title: 'Online Form Fill-up',
+    title: 'অনলাইন ফর্ম পূরণ',
   },
   {
     icon: <Briefcase />,
-    title: 'Job Apply & Resume',
+    title: 'চাকরির আবেদন ও সিভি',
   },
   {
     icon: <Smartphone />,
-    title: 'Mobile Recharge & Bill Pay',
+    title: 'মোবাইল রিচার্জ ও বিল পে',
   },
   {
     icon: <Users />,
-    title: 'Email, Photo & Document Help',
+    title: 'ইমেল, ছবি ও ডকুমেন্ট সহায়তা',
   },
 ];
 
@@ -34,9 +34,9 @@ export function ServicesSection() {
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline">Our Services</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline">আমাদের পরিষেবা</h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              We provide a wide range of digital services to make your life easier.
+              আপনার জীবনকে সহজ করার জন্য আমরা বিভিন্ন ধরণের ডিজিটাল পরিষেবা সরবরাহ করি।
             </p>
           </div>
         </div>

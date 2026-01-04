@@ -18,10 +18,10 @@ export default function Home() {
           <div className="container px-4 md:px-6">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl font-headline">
-                Get Notified When We Open
+                আমরা খুললে বিজ্ঞপ্তি পান
               </h2>
               <p className="mt-4 text-muted-foreground md:text-xl/relaxed">
-                Leave your details below, and we&apos;ll send you an update on our grand opening!
+                আপনার বিবরণ নিচে দিন, এবং আমরা আমাদের গ্র্যান্ড ওপেনিং সম্পর্কে আপনাকে একটি আপডেট পাঠাব!
               </p>
             </div>
             <div className="mx-auto max-w-xl mt-8">
