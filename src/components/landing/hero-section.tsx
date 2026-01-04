@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export function HeroSection() {
   return (
@@ -7,10 +8,14 @@ export function HeroSection() {
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center space-y-6 text-center">
           <div className="space-y-2 fade-in" style={{ animationDelay: '0.2s' }}>
-            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none font-headline text-primary">
-              Sahayata Cyber Support
-            </h1>
-            <p className="text-lg text-muted-foreground md:text-xl">Cyber Café & Digital Help Point</p>
+            <Image
+              src="/logo.png"
+              alt="Sahayata Cyber Support Logo"
+              width={500}
+              height={150}
+              className="mx-auto"
+            />
+            <p className="text-lg text-muted-foreground md:text-xl pt-4">Cyber Café & Digital Help Point</p>
           </div>
           <div className="space-y-3 fade-in" style={{ animationDelay: '0.4s' }}>
             <p className="mx-auto max-w-[800px] text-2xl !leading-tight font-bold md:text-3xl text-primary/80">
