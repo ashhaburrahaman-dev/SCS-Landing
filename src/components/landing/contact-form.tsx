@@ -1,17 +1,21 @@
 "use client";
 
-import { useFormState, useFormStatus } from "react-dom";
+import * as React from "react";
+import { useFormStatus } from "react-dom";
 import { submitContactForm } from "@/app/actions";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { useEffect, useRef } from "react";
 import { useToast } from "@/hooks/use-toast";
 
-const initialState = {
+type ActionState = {
+  message: string;
+  errors?: Record<string, string[]>;
+};
+
+const initialState: ActionState = {
   message: "",
-  errors: undefined,
 };
 
 function SubmitButton() {
@@ -24,11 +28,14 @@ function SubmitButton() {
 }
 
 export function ContactForm() {
-  const [state, formAction] = useFormState(submitContactForm, initialState);
+  const [state, formAction] = React.useActionState<ActionState, FormData>(
+    submitContactForm,
+    initialState
+  );
   const { toast } = useToast();
-  const formRef = useRef<HTMLFormElement>(null);
+  const formRef = React.useRef<HTMLFormElement>(null);
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (state.message) {
       const isError = !!state.errors;
       const title = isError ? "ত্রুটি" : "সাফল্য!";
