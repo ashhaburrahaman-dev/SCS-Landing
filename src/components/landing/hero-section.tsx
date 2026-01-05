@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
+import { getAssetPath } from '@/lib/asset-path';
 
 export function HeroSection() {
   return (
@@ -9,11 +10,12 @@ export function HeroSection() {
         <div className="flex flex-col items-center space-y-6 text-center">
           <div className="space-y-2 fade-in" style={{ animationDelay: '0.2s' }}>
             <Image
-              src="/logo.png"
+              src={getAssetPath('/logo.png')}
               alt="Sahayata Cyber Support Logo"
               width={500}
               height={150}
               className="mx-auto"
+              priority
             />
             <p className="text-lg text-muted-foreground md:text-xl pt-4">সাইবার ক্যাফে ও ডিজিটাল সহায়তা কেন্দ্র</p>
           </div>
