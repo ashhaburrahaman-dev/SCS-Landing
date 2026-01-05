@@ -5,7 +5,6 @@ import {
   DayPicker,
   NextMonthButton,
   PreviousMonthButton,
-  type NavComponent,
 } from "react-day-picker"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
@@ -14,13 +13,10 @@ import { buttonVariants } from "@/components/ui/button"
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>
 
-const Nav: NavComponent = (props) => {
-  const { className, ...rest } = props
-
+function Nav() {
   return (
-    <div className={cn("space-x-1 flex items-center", className)}>
+    <div className={cn("space-x-1 flex items-center")}>
       <PreviousMonthButton
-        {...rest}
         className={cn(
           buttonVariants({ variant: "outline" }),
           "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100"
@@ -29,7 +25,6 @@ const Nav: NavComponent = (props) => {
         <ChevronLeft className="h-4 w-4" />
       </PreviousMonthButton>
       <NextMonthButton
-        {...rest}
         className={cn(
           buttonVariants({ variant: "outline" }),
           "h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100"
