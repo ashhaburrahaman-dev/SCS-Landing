@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>সাহায্যতা সাইবার সাপোর্ট | Ultra Tech Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --tech-primary: #0070f3;
+            --tech-secondary: #00dfd8;
+            --tech-accent: #ff0080;
+            --tech-bg: #fdfdfe;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', 'Space Grotesk', sans-serif;
+            background-color: var(--tech-bg);
+            color: #0f172a;
+            overflow-x: hidden;
+        }
+
+        /* Scanline Overlay Effect */
+        body::before {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.02) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.01), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.01));
+            z-index: 9999;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+        }
+
+        /* Advanced Data Grid */
+        .tech-grid {
+            background-image: 
+                linear-gradient(rgba(0, 112, 243, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 112, 243, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            perspective: 1000px;
+        }
+
+        .hero-glow {
+            background: radial-gradient(circle at 50% 50%, rgba(0, 112, 243, 0.08), transparent 70%);
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(0, 112, 243, 0.15);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        }
+
+        .shimmer-text {
+            background: linear-gradient(90deg, #0070f3, #00dfd8, #0070f3);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 4s linear infinite;
+        }
+
+        @keyframes shimmer {
+            to { background-position: 200% center; }
+        }
+
+        .tech-btn {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .card-stat {
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .card-stat:hover {
+            border-bottom-color: var(--tech-primary);
+            background: rgba(0, 112, 243, 0.02);
+            transform: translateY(-5px);
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .mobile-menu.active {
+            max-height: 300px;
+            transition: max-height 0.3s ease-in;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 2.5px;
+            background-color: #0f172a;
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+    </style>
+</head>
+<body class="tech-grid">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-[100] px-4 py-3">
+        <div class="max-w-7xl mx-auto glass-panel rounded-2xl px-6 py-3">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <div class="relative">
+                        <img src="https://lh3.googleusercontent.com/d/1dkUVL10L9fO1aCef7G4VoyMqDvtoPp7h" alt="Logo" class="w-[100%] h-10 object-contain">
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-6 text-[10px] font-black uppercase tracking-widest text-slate-500">
+                    <a href="#services" class="hover:text-blue-600 transition-colors">Services</a>
+                    <a href="#why-choose" class="hover:text-blue-600 transition-colors">Benefits</a>
+                    <a href="#location" class="px-4 py-2 bg-slate-900 text-white rounded-lg tech-btn">Contact</a>
+                </div>
+
+                <!-- Mobile Hamburger Menu -->
+                <button id="navToggle" class="md:hidden hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="mobile-menu md:hidden">
+                <div class="flex flex-col gap-4 pt-4 border-t border-slate-200">
+                    <a href="#services" class="text-sm font-black uppercase tracking-widest text-slate-600 hover:text-blue-600 transition-colors">Services</a>
+                    <a href="#why-choose" class="text-sm font-black uppercase tracking-widest text-slate-600 hover:text-blue-600 transition-colors">Benefits</a>
+                    <a href="#location" class="text-sm font-black uppercase tracking-widest px-4 py-2 bg-slate-900 text-white rounded-lg tech-btn text-center">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        navToggle.addEventListener('click', function() {
+            navToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        const navLinks = mobileMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+    </script>
+
+    <!-- Hero Section -->
+    <section class="relative px-6 pt-16 pb-24 max-w-7xl mx-auto text-center">
+        <div class="hero-glow absolute inset-0 -z-10"></div>
+        <div class="flex flex-col items-center">
+            <img src="https://lh3.googleusercontent.com/d/1dkUVL10L9fO1aCef7G4VoyMqDvtoPp7h" alt="Sahayata Logo" class="w-48 h-48 md:w-64 md:h-64 object-contain drop-shadow-[0_0_30px_rgba(0,112,243,0.3)] mb-8 animate-float">
+            
+            <h2 class="text-5xl md:text-8xl font-black mb-6 tracking-tighter text-slate-950">
+                স্মার্ট <span class="shimmer-text">ডিজিটাল</span> সলিউশন
+            </h2>
+            
+            <p class="text-lg md:text-xl text-slate-500 mb-10 max-w-2xl mx-auto leading-relaxed">
+                নারায়ণপুর ও রুদ্রপুর এলাকার জন্য সবথেকে ফাস্ট এবং দক্ষ সাইবার সাপোর্ট হাব। আপনার ডিজিটাল কাজ এখন হবে আরও সহজ।
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#services" class="px-8 py-4 bg-blue-600 text-white font-black rounded-xl shadow-lg flex items-center gap-2 hover:scale-105 transition-transform">
+                    <i data-lucide="layout-grid" class="w-5 h-5"></i> সার্ভিসগুলো দেখুন
+                </a>
+                <a href="https://wa.me/yournumber" class="px-8 py-4 glass-panel text-slate-700 font-bold rounded-xl flex items-center gap-2 border-slate-200">
+                    <i data-lucide="message-circle" class="text-blue-600"></i> সরাসরি কথা বলুন
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h3 class="text-xs font-black uppercase tracking-[0.4em] text-blue-600 mb-4">আমাদের সার্ভিসসমূহ</h3>
+            <h4 class="text-4xl font-black text-slate-900 italic">Core Digital Services</h4>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- সার্ভিস ১ -->
+            <div class="glass-panel p-8 rounded-3xl card-stat">
+                <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6"><i data-lucide="monitor"></i></div>
+                <h5 class="text-xl font-black mb-3 italic uppercase">ইন্টারনেট ব্রাউজিং</h5>
+                <p class="text-slate-500 text-sm leading-relaxed">হাই-স্পিড ব্রাউজিং এবং নিরাপদ সার্ফিং সুবিধা আপনার জন্য।</p>
+            </div>
+            <!-- সার্ভিস ২ -->
+            <div class="glass-panel p-8 rounded-3xl card-stat">
+                <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6"><i data-lucide="printer"></i></div>
+                <h5 class="text-xl font-black mb-3 italic uppercase">প্রিন্টিং ও স্ক্যান</h5>
+                <p class="text-slate-500 text-sm leading-relaxed">হাই-কোয়ালিটি কালার প্রিন্ট, ফটোকপি এবং নির্ভুল স্ক্যানিং সার্ভিস।</p>
+            </div>
+            <!-- সার্ভিস ৩ -->
+            <div class="glass-panel p-8 rounded-3xl card-stat">
+                <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6"><i data-lucide="edit-3"></i></div>
+                <h5 class="text-xl font-black mb-3 italic uppercase">অনলাইন ফর্ম পূরণ</h5>
+                <p class="text-slate-500 text-sm leading-relaxed">যেকোনো সরকারি বা বেসরকারি অনলাইন ফর্ম নির্ভুলভাবে পূরণ।</p>
+            </div>
+            <!-- সার্ভিস ৪ -->
+            <div class="glass-panel p-8 rounded-3xl card-stat">
+                <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6"><i data-lucide="briefcase"></i></div>
+                <h5 class="text-xl font-black mb-3 italic uppercase">চাকরির আবেদন ও রিজিউমে</h5>
+                <p class="text-slate-500 text-sm leading-relaxed">চাকরির আবেদন এবং প্রফেশনাল রিজিউমে বা সিভি তৈরি।</p>
+            </div>
+            <!-- সার্ভিস ৫ -->
+            <div class="glass-panel p-8 rounded-3xl card-stat">
+                <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6"><i data-lucide="smartphone"></i></div>
+                <h5 class="text-xl font-black mb-3 italic uppercase">রিচার্জ ও বিল পেমেন্ট</h5>
+                <p class="text-slate-500 text-sm leading-relaxed">মোবাইল রিচার্জ এবং ইলেকট্রিক বা অন্যান্য বিল পরিশোধ।</p>
+            </div>
+            <!-- সার্ভিস ৬ -->
+            <div class="glass-panel p-8 rounded-3xl card-stat">
+                <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6"><i data-lucide="mail"></i></div>
+                <h5 class="text-xl font-black mb-3 italic uppercase">ডকুমেন্ট সহায়তা</h5>
+                <p class="text-slate-500 text-sm leading-relaxed">ইমেইল পাঠানো, ছবি এডিট এবং ডকুমেন্ট সংক্রান্ত সব ধরণের সহায়তা।</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why-choose" class="py-24 px-6 bg-slate-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h3 class="text-xs font-black uppercase tracking-[0.4em] text-blue-600 mb-4">কেন আমরা?</h3>
+                <h4 class="text-4xl font-black text-slate-900 italic tracking-tighter">WHY CHOOSE SAHAYATA?</h4>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-10 rounded-3xl border border-slate-100 shadow-sm text-center">
+                    <i data-lucide="heart" class="w-10 h-10 mx-auto text-blue-600 mb-6"></i>
+                    <h5 class="font-bold mb-2">বন্ধুসুলভ সহায়তা</h5>
+                    <p class="text-xs text-slate-500">সহজ ও সাবলীলভাবে আপনার সব সমস্যার সমাধান।</p>
+                </div>
+                <div class="bg-white p-10 rounded-3xl border border-slate-100 shadow-sm text-center">
+                    <i data-lucide="badge-percent" class="w-10 h-10 mx-auto text-blue-600 mb-6"></i>
+                    <h5 class="font-bold mb-2">সাশ্রয়ী চার্জ</h5>
+                    <p class="text-xs text-slate-500">সেরা কোয়ালিটির সার্ভিস একদম সঠিক মূল্যে।</p>
+                </div>
+                <div class="bg-white p-10 rounded-3xl border border-slate-100 shadow-sm text-center">
+                    <i data-lucide="zap" class="w-10 h-10 mx-auto text-blue-600 mb-6"></i>
+                    <h5 class="font-bold mb-2">দ্রুত সার্ভিস</h5>
+                    <p class="text-xs text-slate-500">অপেক্ষা করার ঝামেলা ছাড়াই ঝটপট কাজ।</p>
+                </div>
+                <div class="bg-white p-10 rounded-3xl border border-slate-100 shadow-sm text-center">
+                    <i data-lucide="home" class="w-10 h-10 mx-auto text-blue-600 mb-6"></i>
+                    <h5 class="font-bold mb-2">বাড়ির কাছেই</h5>
+                    <p class="text-xs text-slate-500">আপনার এলাকার সবথেকে কাছের নির্ভরযোগ্য হাব।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h3 class="text-xs font-black uppercase tracking-[0.4em] text-blue-600 mb-4">আপনার তথ্য</h3>
+            <h4 class="text-4xl font-black text-slate-900 italic">Contact Us Today</h4>
+        </div>
+
+        <div class="max-w-2xl mx-auto glass-panel rounded-3xl p-8 md:p-12">
+            <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+                <input type="hidden" name="access_key" value="7735e1d1-b98f-46a0-a191-c33a666377b9">
+                <input type="hidden" name="subject" value="নতুন যোগাযোগ - সাহায়তা সাইবার সাপোর্ট">
+                <input type="hidden" name="from_name" value="Sahayata Cyber Support">
+                <input type="hidden" name="redirect" value="/thank-you">
+
+                <!-- নাম -->
+                <div>
+                    <label for="name" class="block text-sm font-black uppercase tracking-widest text-slate-700 mb-3">
+                        <i data-lucide="user" class="w-4 h-4 inline mr-2"></i>নাম
+                    </label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        placeholder="আপনার সম্পূর্ণ নাম লিখুন" 
+                        class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition-all text-slate-900 placeholder-slate-400"
+                        required
+                    >
+                </div>
+
+                <!-- মোবাইল নম্বর -->
+                <div>
+                    <label for="phone" class="block text-sm font-black uppercase tracking-widest text-slate-700 mb-3">
+                        <i data-lucide="smartphone" class="w-4 h-4 inline mr-2"></i>মোবাইল নম্বর
+                    </label>
+                    <input 
+                        type="tel" 
+                        id="phone" 
+                        name="phone" 
+                        placeholder="01x xxxx xxxx" 
+                        pattern="[0-9]{10,11}"
+                        class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition-all text-slate-900 placeholder-slate-400"
+                        required
+                    >
+                </div>
+
+                <!-- সার্ভিস নির্বাচন -->
+                <div>
+                    <label for="service" class="block text-sm font-black uppercase tracking-widest text-slate-700 mb-3">
+                        <i data-lucide="layout-grid" class="w-4 h-4 inline mr-2"></i>আপনি কোন সার্ভিসটির জন্য অপেক্ষা করছেন?
+                    </label>
+                    <select 
+                        id="service" 
+                        name="service" 
+                        class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition-all text-slate-900"
+                        required
+                    >
+                        <option value="" disabled selected>সেবা নির্বাচন করুন</option>
+                        <option value="internet">ইন্টারনেট ব্রাউজিং</option>
+                        <option value="printing">প্রিন্টিং ও স্ক্যান</option>
+                        <option value="forms">অনলাইন ফর্ম পূরণ</option>
+                        <option value="jobs">চাকরির আবেদন ও রিজিউমে</option>
+                        <option value="recharge">রিচার্জ ও বিল পেমেন্ট</option>
+                        <option value="documents">ডকুমেন্ট সহায়তা</option>
+                        <option value="other">অন্য কোন সেবা</option>
+                    </select>
+                </div>
+
+                <!-- Submit Button -->
+                <button 
+                    type="submit" 
+                    id="submitBtn"
+                    class="w-full mt-8 px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-black rounded-2xl tech-btn shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center justify-center gap-3 group"
+                >
+                    <i data-lucide="send" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                    👉 খোলার সাথে সাথে জানাবেন
+                </button>
+
+                <!-- Success Message -->
+                <div id="successMessage" class="hidden mt-6 p-4 bg-green-50 border border-green-300 rounded-xl text-green-700 text-center font-bold">
+                    <i data-lucide="check-circle" class="w-5 h-5 inline mr-2"></i>ধন্যবাদ! আমরা শীঘ্রই যোগাযোগ করব।
+                </div>
+
+                <!-- Loading Message -->
+                <div id="loadingMessage" class="hidden mt-6 p-4 bg-blue-50 border border-blue-300 rounded-xl text-blue-700 text-center font-bold">
+                    <i data-lucide="loader" class="w-5 h-5 inline mr-2 animate-spin"></i>পাঠানো হচ্ছে...
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="glass-panel rounded-[48px] overflow-hidden flex flex-col lg:flex-row shadow-2xl border-none">
+            <div class="lg:w-1/2 p-12 md:p-16 flex flex-col justify-center">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-50 text-blue-600 text-[10px] font-black mb-6">
+                    <i data-lucide="map-pin" class="w-3 h-3"></i> LOCATION DATA
+                </div>
+                <h4 class="text-4xl md:text-5xl font-black mb-8 leading-tight italic">নারায়ণপুর / রুদ্রপুর এলাকা</h4>
+                <div class="space-y-4 text-slate-600 font-medium">
+                    <p class="flex items-center gap-3"><i data-lucide="navigation" class="text-blue-600 w-5 h-5"></i> বাদুড়িয়া, উত্তর ২৪ পরগনা</p>
+                    <p class="flex items-center gap-3"><i data-lucide="clock" class="text-blue-600 w-5 h-5"></i> প্রতিদিন সকাল ১০টা - রাত ৯টা</p>
+                </div>
+                <a href="#" class="mt-10 px-8 py-4 bg-slate-900 text-white font-black rounded-2xl flex items-center justify-center gap-3 hover:bg-blue-600 transition-colors">
+                    <i data-lucide="map" class="w-5 h-5"></i> গুগল ম্যাপে দেখুন
+                </a>
+            </div>
+            <div class="lg:w-1/2 bg-slate-100 h-[400px] lg:h-auto flex items-center justify-center">
+                <div class="text-center opacity-30">
+                    <i data-lucide="satellite-dish" class="w-20 h-20 mx-auto mb-4"></i>
+                    <p class="font-black text-xs uppercase tracking-widest">MAP_STREAM_ACTIVE</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 px-6 bg-white border-t border-slate-100 text-center">
+        <div class="max-w-7xl mx-auto">
+            <img src="https://lh3.googleusercontent.com/d/1dkUVL10L9fO1aCef7G4VoyMqDvtoPp7h" alt="Logo" class="h-12 mx-auto mb-6 opacity-50 grayscale hover:grayscale-0 transition-all cursor-pointer">
+            <p class="text-sm font-black text-slate-400 uppercase tracking-[0.5em] mb-4">Sahayata Cyber Support</p>
+            <p class="text-[10px] text-slate-400 italic">Est. 2026 • Your Local Digital Partner</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp FAB -->
+    <a href="https://wa.me/yournumber" class="fixed bottom-8 right-8 w-16 h-16 bg-[#25D366] rounded-2xl flex items-center justify-center shadow-2xl z-[100] hover:scale-110 active:scale-90 transition-all group">
+        <i data-lucide="message-circle" class="text-white w-9 h-9"></i>
+    </a>
+
+    <script>
+        lucide.createIcons();
+        
+        // Shimmer effect variability
+        setInterval(() => {
+            const shimmer = document.querySelector('.shimmer-text');
+            if (shimmer && Math.random() > 0.9) {
+                shimmer.style.opacity = '0.8';
+                setTimeout(() => shimmer.style.opacity = '1', 100);
+            }
+        }, 200);
+
+        // Contact Form Handler
+        const contactForm = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+        const loadingMessage = document.getElementById('loadingMessage');
+        const submitBtn = document.getElementById('submitBtn');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                // Show loading state
+                loadingMessage.classList.remove('hidden');
+                submitBtn.disabled = true;
+
+                try {
+                    const formData = new FormData(contactForm);
+                    
+                    const response = await fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    const data = await response.json();
+
+                    if (data.success) {
+                        // Hide loading
+                        loadingMessage.classList.add('hidden');
+                        
+                        // Show success message
+                        successMessage.classList.remove('hidden');
+                        contactForm.style.opacity = '0.6';
+
+                        // Reset form
+                        setTimeout(() => {
+                            contactForm.reset();
+                            contactForm.style.opacity = '1';
+                            successMessage.classList.add('hidden');
+                            submitBtn.disabled = false;
+                        }, 3000);
+                    } else {
+                        loadingMessage.classList.add('hidden');
+                        alert('কিছু সমস্যা হয়েছে। দয়া করে আবার চেষ্টা করুন।');
+                        submitBtn.disabled = false;
+                    }
+                } catch (error) {
+                    loadingMessage.classList.add('hidden');
+                    console.error('Error:', error);
+                    alert('ফর্ম পাঠাতে ত্রুটি হয়েছে।');
+                    submitBtn.disabled = false;
+                }
+            });
+        }
+    </script>
+</body>
+</html>
