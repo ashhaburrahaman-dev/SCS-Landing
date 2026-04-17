@@ -1,493 +1,511 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>সাহায্যতা সাইবার সাপোর্ট | Ultra Tech Hub</title>
+    <title>Sahayota Cyber Support | Best CSC & Digital Services in Baduria</title>
+    <meta name="description" content="Sahayota Cyber Support in Narayanpur, Baduria offers fast and reliable online form fill-up, CSC services, ticket booking, printing, and tech solutions.">
+    <meta name="keywords" content="Cyber Cafe in Baduria, CSC Center Near Me, Online form fill up Narayanpur, Passport photo Baduria, Sublimation printing Baduria">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'Noto Sans Bengali', 'sans-serif'],
+                    },
+                    colors: {
+                        cyber: {
+                            bg: '#030712',      // Deep space black
+                            card: '#0f172a',    // Dark blue-gray for cards
+                            border: '#1e3a8a',  // Blue border
+                            neon: '#00e5ff',    // Cyan glow
+                            accent: '#3b82f6',  // Standard blue
+                            text: '#94a3b8'     // Slate 400 for text
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Local Business Schema for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Sahayota Cyber Support",
+      "image": "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=1000",
+      "@id": "",
+      "url": "",
+      "telephone": "+916294815452", 
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Beside Marriage Registration Office, Narayanpur",
+        "addressLocality": "Rudrapur, Baduria PS",
+        "addressRegion": "West Bengal",
+        "postalCode": "743401",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 22.7423, 
+        "longitude": 88.7885
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+        ],
+        "opens": "09:00",
+        "closes": "20:00"
+      }
+    }
+    </script>
+
     <style>
-        :root {
-            --tech-primary: #0070f3;
-            --tech-secondary: #00dfd8;
-            --tech-accent: #ff0080;
-            --tech-bg: #fdfdfe;
-        }
-
+        /* Futuristic Custom Styles */
         body {
-            font-family: 'Hind Siliguri', 'Space Grotesk', sans-serif;
-            background-color: var(--tech-bg);
-            color: #0f172a;
-            overflow-x: hidden;
+            background-color: #030712;
+            color: #94a3b8;
         }
-
-        /* Scanline Overlay Effect */
-        body::before {
-            content: " ";
-            display: block;
-            position: fixed;
-            top: 0; left: 0; bottom: 0; right: 0;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.02) 50%), 
-                        linear-gradient(90deg, rgba(255, 0, 0, 0.01), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.01));
-            z-index: 9999;
-            background-size: 100% 2px, 3px 100%;
-            pointer-events: none;
+        
+        .pulse-animation {
+            animation: pulse-border 2s infinite;
         }
-
-        /* Advanced Data Grid */
-        .tech-grid {
+        @keyframes pulse-border {
+            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(34, 197, 94, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+        
+        .hero-pattern {
+            background-color: #030712;
+            background-image: radial-gradient(circle at top center, #0f2b5b 0%, #030712 100%);
+        }
+        
+        .cyber-grid {
+            position: absolute;
+            inset: 0;
+            background-size: 50px 50px;
             background-image: 
-                linear-gradient(rgba(0, 112, 243, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 112, 243, 0.05) 1px, transparent 1px);
-            background-size: 40px 40px;
-            perspective: 1000px;
-        }
-
-        .hero-glow {
-            background: radial-gradient(circle at 50% 50%, rgba(0, 112, 243, 0.08), transparent 70%);
+                linear-gradient(to right, rgba(0, 229, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 229, 255, 0.05) 1px, transparent 1px);
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+            z-index: 1;
         }
 
         .glass-panel {
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(20px) saturate(180%);
-            border: 1px solid rgba(0, 112, 243, 0.15);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+            background: rgba(3, 7, 18, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0, 229, 255, 0.15);
         }
 
-        .shimmer-text {
-            background: linear-gradient(90deg, #0070f3, #00dfd8, #0070f3);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: shimmer 4s linear infinite;
-        }
-
-        @keyframes shimmer {
-            to { background-position: 200% center; }
-        }
-
-        .tech-btn {
+        .cyber-card {
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0.8) 0%, rgba(3, 7, 18, 0.9) 100%);
+            border: 1px solid rgba(30, 58, 138, 0.5);
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
         }
 
-        .card-stat {
-            border-bottom: 2px solid transparent;
-            transition: all 0.3s;
+        .cyber-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 2px;
+            background: linear-gradient(90deg, transparent, #00e5ff, transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
-        .card-stat:hover {
-            border-bottom-color: var(--tech-primary);
-            background: rgba(0, 112, 243, 0.02);
+        .cyber-card:hover::before {
+            opacity: 1;
+        }
+
+        .cyber-card:hover {
+            border-color: rgba(0, 229, 255, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(0, 229, 255, 0.15);
             transform: translateY(-5px);
         }
 
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
+        .neon-text {
+            text-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+        .neon-btn {
+            background: rgba(0, 229, 255, 0.1);
+            border: 1px solid #00e5ff;
+            color: #00e5ff;
+            box-shadow: inset 0 0 10px rgba(0, 229, 255, 0.2), 0 0 10px rgba(0, 229, 255, 0.2);
+            transition: all 0.3s ease;
         }
 
-        /* Mobile Menu */
-        .mobile-menu {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
+        .neon-btn:hover {
+            background: #00e5ff;
+            color: #030712;
+            box-shadow: inset 0 0 10px rgba(0, 229, 255, 0.5), 0 0 20px rgba(0, 229, 255, 0.6);
         }
 
-        .mobile-menu.active {
-            max-height: 300px;
-            transition: max-height 0.3s ease-in;
+        .map-dark {
+            filter: grayscale(100%) invert(92%) contrast(85%) hue-rotate(180deg);
         }
 
-        .hamburger {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 2.5px;
-            background-color: #0f172a;
-            border-radius: 2px;
-            transition: all 0.3s;
-        }
-
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(8px, 8px);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
-        }
+        /* Futuristic Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #030712; }
+        ::-webkit-scrollbar-thumb { background: #1e3a8a; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #00e5ff; }
     </style>
 </head>
-<body class="tech-grid">
+<body class="bg-cyber-bg text-cyber-text antialiased flex flex-col min-h-screen selection:bg-cyber-neon selection:text-black">
 
-    <!-- Navbar -->
-    <nav class="sticky top-0 z-[100] px-4 py-3">
-        <div class="max-w-7xl mx-auto glass-panel rounded-2xl px-6 py-3">
-            <div class="flex justify-between items-center">
-                <!-- Logo -->
-                <div class="flex items-center gap-3">
-                    <div class="relative">
-                        <img src="https://lh3.googleusercontent.com/d/1dkUVL10L9fO1aCef7G4VoyMqDvtoPp7h" alt="Logo" class="w-[100%] h-10 object-contain">
+    <!-- Header / Nav -->
+    <header class="glass-panel sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="#" class="flex-shrink-0 flex items-center gap-3 hover:opacity-90 transition-opacity group">
+                    <img src="https://github.com/ashhaburrahaman-dev/SCS-Landing/blob/ebfc417d9038fd291691dee46b1bea9e6abab54d/logo.png" alt="Sahayota Cyber Support Logo" class="h-12 sm:h-14 md:h-16 w-auto object-contain bg-white p-1 rounded-lg shadow-[0_0_10px_rgba(0,229,255,0.2)] group-hover:shadow-[0_0_15px_rgba(0,229,255,0.5)] transition-all" onerror="this.src='https://via.placeholder.com/150x50?text=Sahayota+Logo'">
+                    <div class="hidden lg:block">
+                        <h1 class="font-bold text-xl text-white leading-tight group-hover:text-cyber-neon transition-colors">Sahayota Cyber Support</h1>
+                        <span class="text-xs text-cyber-neon/80 font-semibold block">সহায়তা সাইবার সাপোর্ট</span>
                     </div>
-                </div>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center gap-6 text-[10px] font-black uppercase tracking-widest text-slate-500">
-                    <a href="#services" class="hover:text-blue-600 transition-colors">Services</a>
-                    <a href="#why-choose" class="hover:text-blue-600 transition-colors">Benefits</a>
-                    <a href="#location" class="px-4 py-2 bg-slate-900 text-white rounded-lg tech-btn">Contact</a>
-                </div>
-
-                <!-- Mobile Hamburger Menu -->
-                <button id="navToggle" class="md:hidden hamburger" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-
-            <!-- Mobile Menu -->
-            <div id="mobileMenu" class="mobile-menu md:hidden">
-                <div class="flex flex-col gap-4 pt-4 border-t border-slate-200">
-                    <a href="#services" class="text-sm font-black uppercase tracking-widest text-slate-600 hover:text-blue-600 transition-colors">Services</a>
-                    <a href="#why-choose" class="text-sm font-black uppercase tracking-widest text-slate-600 hover:text-blue-600 transition-colors">Benefits</a>
-                    <a href="#location" class="text-sm font-black uppercase tracking-widest px-4 py-2 bg-slate-900 text-white rounded-lg tech-btn text-center">Contact</a>
+                </a>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-300 hover:text-cyber-neon hover:shadow-cyber-neon font-medium transition-all">About</a>
+                    <a href="#services" class="text-gray-300 hover:text-cyber-neon font-medium transition-all">Services</a>
+                    <a href="#gallery" class="text-gray-300 hover:text-cyber-neon font-medium transition-all">Gallery</a>
+                    <a href="#contact" class="text-gray-300 hover:text-cyber-neon font-medium transition-all">Contact</a>
+                </nav>
+                <div class="hidden md:flex">
+                    <a href="tel:+916294815452" class="flex items-center gap-2 neon-btn px-5 py-2.5 rounded-full font-bold">
+                        <i class="fa-solid fa-phone"></i> Call Now
+                    </a>
                 </div>
             </div>
         </div>
-    </nav>
-
-    <script>
-        const navToggle = document.getElementById('navToggle');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        navToggle.addEventListener('click', function() {
-            navToggle.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-        });
-
-        // Close menu when a link is clicked
-        const navLinks = mobileMenu.querySelectorAll('a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navToggle.classList.remove('active');
-                mobileMenu.classList.remove('active');
-            });
-        });
-    </script>
+    </header>
 
     <!-- Hero Section -->
-    <section class="relative px-6 pt-16 pb-24 max-w-7xl mx-auto text-center">
-        <div class="hero-glow absolute inset-0 -z-10"></div>
-        <div class="flex flex-col items-center">
-            <img src="https://lh3.googleusercontent.com/d/1dkUVL10L9fO1aCef7G4VoyMqDvtoPp7h" alt="Sahayata Logo" class="w-48 h-48 md:w-64 md:h-64 object-contain drop-shadow-[0_0_30px_rgba(0,112,243,0.3)] mb-8 animate-float">
-            
-            <h2 class="text-5xl md:text-8xl font-black mb-6 tracking-tighter text-slate-950">
-                স্মার্ট <span class="shimmer-text">ডিজিটাল</span> সলিউশন
-            </h2>
-            
-            <p class="text-lg md:text-xl text-slate-500 mb-10 max-w-2xl mx-auto leading-relaxed">
-                নারায়ণপুর ও রুদ্রপুর এলাকার জন্য সবথেকে ফাস্ট এবং দক্ষ সাইবার সাপোর্ট হাব। আপনার ডিজিটাল কাজ এখন হবে আরও সহজ।
+    <section class="hero-pattern relative overflow-hidden">
+        <div class="cyber-grid"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-cyber-bg z-10"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 py-20 lg:py-32 flex flex-col items-center text-center">
+            <span class="bg-cyber-neon/10 text-cyber-neon border border-cyber-neon/30 px-5 py-1.5 rounded-full text-sm font-semibold tracking-wide mb-6 shadow-[0_0_15px_rgba(0,229,255,0.15)] backdrop-blur-sm">
+                <i class="fa-solid fa-location-crosshairs mr-1 animate-pulse"></i> Narayanpur, Baduria
+            </span>
+            <h1 class="text-4xl md:text-5xl lg:text-7xl font-extrabold text-white tracking-tight mb-6 leading-tight">
+                All Digital & Online Services <br class="hidden md:block" />
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-neon to-blue-500 neon-text">Under One Roof</span>
+            </h1>
+            <p class="mt-4 text-xl md:text-2xl text-gray-400 max-w-3xl mb-10">
+                Fast, Reliable & Trusted Cyber Support Near You. <br class="hidden sm:block"/> <span class="text-gray-300">No Tension, We Handle Everything.</span>
             </p>
+            <div class="flex flex-col sm:flex-row gap-5 w-full sm:w-auto">
+                <a href="https://wa.me/916294815452?text=Hi%20Sahayota%20Cyber%20Support,%20I%20need%20some%20information." target="_blank" class="flex items-center justify-center gap-2 bg-[#25D366] text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#1ebe57] transition-all shadow-[0_0_20px_rgba(37,211,102,0.4)] hover:shadow-[0_0_30px_rgba(37,211,102,0.6)] hover:-translate-y-1">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i> Chat on WhatsApp
+                </a>
+                <a href="#services" class="flex items-center justify-center gap-2 neon-btn px-8 py-4 rounded-xl font-bold text-lg">
+                    View Services <i class="fa-solid fa-arrow-down animate-bounce mt-1"></i>
+                </a>
+            </div>
+        </div>
+    </section>
 
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="#services" class="px-8 py-4 bg-blue-600 text-white font-black rounded-xl shadow-lg flex items-center gap-2 hover:scale-105 transition-transform">
-                    <i data-lucide="layout-grid" class="w-5 h-5"></i> সার্ভিসগুলো দেখুন
-                </a>
-                <a href="https://wa.me/yournumber" class="px-8 py-4 glass-panel text-slate-700 font-bold rounded-xl flex items-center gap-2 border-slate-200">
-                    <i data-lucide="message-circle" class="text-blue-600"></i> সরাসরি কথা বলুন
-                </a>
+    <!-- About Section -->
+    <section id="about" class="py-16 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold text-white mb-2">System.About <span class="text-cyber-neon/70 text-2xl font-normal block mt-1">(আমাদের সম্পর্কে)</span></h2>
+                <div class="w-20 h-1 bg-cyber-neon mx-auto mb-8 rounded-full shadow-[0_0_10px_rgba(0,229,255,0.5)]"></div>
+                <div class="cyber-card p-8 md:p-12 rounded-2xl">
+                    <p class="text-lg text-gray-300 leading-relaxed">
+                        <strong class="text-cyber-neon">Sahayota Cyber Support</strong> is your one-stop solution for all digital, online, and government services. We provide fast, reliable, and secure support using modern technology (<span class="text-white">Mac Mini, High-Speed Internet</span>) and expert handling. Whether you need a simple printout or complex online applications, we are here to process your requests with maximum efficiency.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-            <h3 class="text-xs font-black uppercase tracking-[0.4em] text-blue-600 mb-4">আমাদের সার্ভিসসমূহ</h3>
-            <h4 class="text-4xl font-black text-slate-900 italic">Core Digital Services</h4>
-        </div>
+    <section id="services" class="py-20 relative">
+        <div class="absolute inset-0 bg-[#070d1a] z-0"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white mb-2">Our Services <span class="text-cyber-neon/70 text-2xl font-normal block mt-1">(আমাদের সেবাসমূহ)</span></h2>
+                <div class="w-20 h-1 bg-cyber-neon mx-auto rounded-full shadow-[0_0_10px_rgba(0,229,255,0.5)]"></div>
+                <p class="mt-4 text-gray-400">Everything you need in the digital grid.</p>
+            </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- সার্ভিস ১ -->
-            <div class="glass-panel p-8 rounded-3xl card-stat">
-                <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6"><i data-lucide="monitor"></i></div>
-                <h5 class="text-xl font-black mb-3 italic uppercase">ইন্টারনেট ব্রাউজিং</h5>
-                <p class="text-slate-500 text-sm leading-relaxed">হাই-স্পিড ব্রাউজিং এবং নিরাপদ সার্ফিং সুবিধা আপনার জন্য।</p>
-            </div>
-            <!-- সার্ভিস ২ -->
-            <div class="glass-panel p-8 rounded-3xl card-stat">
-                <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6"><i data-lucide="printer"></i></div>
-                <h5 class="text-xl font-black mb-3 italic uppercase">প্রিন্টিং ও স্ক্যান</h5>
-                <p class="text-slate-500 text-sm leading-relaxed">হাই-কোয়ালিটি কালার প্রিন্ট, ফটোকপি এবং নির্ভুল স্ক্যানিং সার্ভিস।</p>
-            </div>
-            <!-- সার্ভিস ৩ -->
-            <div class="glass-panel p-8 rounded-3xl card-stat">
-                <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6"><i data-lucide="edit-3"></i></div>
-                <h5 class="text-xl font-black mb-3 italic uppercase">অনলাইন ফর্ম পূরণ</h5>
-                <p class="text-slate-500 text-sm leading-relaxed">যেকোনো সরকারি বা বেসরকারি অনলাইন ফর্ম নির্ভুলভাবে পূরণ।</p>
-            </div>
-            <!-- সার্ভিস ৪ -->
-            <div class="glass-panel p-8 rounded-3xl card-stat">
-                <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6"><i data-lucide="briefcase"></i></div>
-                <h5 class="text-xl font-black mb-3 italic uppercase">চাকরির আবেদন ও রিজিউমে</h5>
-                <p class="text-slate-500 text-sm leading-relaxed">চাকরির আবেদন এবং প্রফেশনাল রিজিউমে বা সিভি তৈরি।</p>
-            </div>
-            <!-- সার্ভিস ৫ -->
-            <div class="glass-panel p-8 rounded-3xl card-stat">
-                <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6"><i data-lucide="smartphone"></i></div>
-                <h5 class="text-xl font-black mb-3 italic uppercase">রিচার্জ ও বিল পেমেন্ট</h5>
-                <p class="text-slate-500 text-sm leading-relaxed">মোবাইল রিচার্জ এবং ইলেকট্রিক বা অন্যান্য বিল পরিশোধ।</p>
-            </div>
-            <!-- সার্ভিস ৬ -->
-            <div class="glass-panel p-8 rounded-3xl card-stat">
-                <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6"><i data-lucide="mail"></i></div>
-                <h5 class="text-xl font-black mb-3 italic uppercase">ডকুমেন্ট সহায়তা</h5>
-                <p class="text-slate-500 text-sm leading-relaxed">ইমেইল পাঠানো, ছবি এডিট এবং ডকুমেন্ট সংক্রান্ত সব ধরণের সহায়তা।</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="cyber-card p-8 rounded-2xl group">
+                    <div class="w-14 h-14 bg-cyber-neon/10 text-cyber-neon border border-cyber-neon/20 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-cyber-neon group-hover:text-black transition-all duration-300 shadow-[0_0_15px_rgba(0,229,255,0.1)]">
+                        <i class="fa-solid fa-file-signature"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyber-neon transition-colors">Online Form Fill-up</h3>
+                    <p class="text-gray-400 text-sm">Expert assistance for all Government & Private job forms, college admissions, and scholarship applications.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="cyber-card p-8 rounded-2xl group">
+                    <div class="w-14 h-14 bg-cyber-neon/10 text-cyber-neon border border-cyber-neon/20 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-cyber-neon group-hover:text-black transition-all duration-300 shadow-[0_0_15px_rgba(0,229,255,0.1)]">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyber-neon transition-colors">CSC Digital Seva</h3>
+                    <p class="text-gray-400 text-sm">Aadhar printing, PAN Card apply/correction, Voter ID, Ration Card, and other citizen-centric services.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="cyber-card p-8 rounded-2xl group">
+                    <div class="w-14 h-14 bg-cyber-neon/10 text-cyber-neon border border-cyber-neon/20 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-cyber-neon group-hover:text-black transition-all duration-300 shadow-[0_0_15px_rgba(0,229,255,0.1)]">
+                        <i class="fa-solid fa-train"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyber-neon transition-colors">IRCTC Ticket Booking</h3>
+                    <p class="text-gray-400 text-sm">Fast and reliable train ticket booking for Tatkal and General quotas with instant confirmation.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="cyber-card p-8 rounded-2xl group">
+                    <div class="w-14 h-14 bg-cyber-neon/10 text-cyber-neon border border-cyber-neon/20 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-cyber-neon group-hover:text-black transition-all duration-300 shadow-[0_0_15px_rgba(0,229,255,0.1)]">
+                        <i class="fa-solid fa-print"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyber-neon transition-colors">Print, Scan & Xerox</h3>
+                    <p class="text-gray-400 text-sm">High-quality color/B&W printing, scanning, document lamination, and spiral binding services.</p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="cyber-card p-8 rounded-2xl group">
+                    <div class="w-14 h-14 bg-cyber-neon/10 text-cyber-neon border border-cyber-neon/20 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-cyber-neon group-hover:text-black transition-all duration-300 shadow-[0_0_15px_rgba(0,229,255,0.1)]">
+                        <i class="fa-solid fa-camera-retro"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyber-neon transition-colors">Passport Photo & Editing</h3>
+                    <p class="text-gray-400 text-sm">Instant passport and stamp size photos. Professional photo editing, background removal, and restoration.</p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="cyber-card p-8 rounded-2xl group">
+                    <div class="w-14 h-14 bg-cyber-neon/10 text-cyber-neon border border-cyber-neon/20 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-cyber-neon group-hover:text-black transition-all duration-300 shadow-[0_0_15px_rgba(0,229,255,0.1)]">
+                        <i class="fa-solid fa-mug-hot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyber-neon transition-colors">Sublimation Printing</h3>
+                    <p class="text-gray-400 text-sm">Customized printing on Mugs, T-Shirts, Keyrings, and magic mirrors. Perfect for personalized gifts.</p>
+                </div>
+
+                <!-- Service 7 -->
+                <div class="cyber-card p-8 rounded-2xl group">
+                    <div class="w-14 h-14 bg-cyber-neon/10 text-cyber-neon border border-cyber-neon/20 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-cyber-neon group-hover:text-black transition-all duration-300 shadow-[0_0_15px_rgba(0,229,255,0.1)]">
+                        <i class="fa-solid fa-pen-nib"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyber-neon transition-colors">Graphic Design</h3>
+                    <p class="text-gray-400 text-sm">Creative Banner, Flex, Logo, Visiting Card, and invitation card designing with professional finishing.</p>
+                </div>
+
+                <!-- Service 8 -->
+                <div class="cyber-card p-8 rounded-2xl group">
+                    <div class="w-14 h-14 bg-cyber-neon/10 text-cyber-neon border border-cyber-neon/20 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-cyber-neon group-hover:text-black transition-all duration-300 shadow-[0_0_15px_rgba(0,229,255,0.1)]">
+                        <i class="fa-solid fa-image"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyber-neon transition-colors">Frames & Calligraphy</h3>
+                    <p class="text-gray-400 text-sm">Beautiful photo framing services and exquisite Islamic Calligraphy prints for home decoration.</p>
+                </div>
+
+                <!-- Service 9 -->
+                <div class="cyber-card p-8 rounded-2xl group">
+                    <div class="w-14 h-14 bg-cyber-neon/10 text-cyber-neon border border-cyber-neon/20 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-cyber-neon group-hover:text-black transition-all duration-300 shadow-[0_0_15px_rgba(0,229,255,0.1)]">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyber-neon transition-colors">Tech Solutions</h3>
+                    <p class="text-gray-400 text-sm">Basic computer troubleshooting, software installation, OS formatting, and technical support.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Why Choose Us -->
-    <section id="why-choose" class="py-24 px-6 bg-slate-50">
-        <div class="max-w-7xl mx-auto">
+    <section class="py-20 bg-cyber-bg relative border-t border-b border-cyber-border/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h3 class="text-xs font-black uppercase tracking-[0.4em] text-blue-600 mb-4">কেন আমরা?</h3>
-                <h4 class="text-4xl font-black text-slate-900 italic tracking-tighter">WHY CHOOSE SAHAYATA?</h4>
+                <h2 class="text-3xl font-bold text-white mb-2">Why Choose Sahayota? <span class="text-cyber-neon/70 text-2xl font-normal block mt-1">(কেন আমাদের বেছে নেবেন?)</span></h2>
+                <div class="w-20 h-1 bg-cyber-neon mx-auto rounded-full shadow-[0_0_10px_rgba(0,229,255,0.5)]"></div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-white p-10 rounded-3xl border border-slate-100 shadow-sm text-center">
-                    <i data-lucide="heart" class="w-10 h-10 mx-auto text-blue-600 mb-6"></i>
-                    <h5 class="font-bold mb-2">বন্ধুসুলভ সহায়তা</h5>
-                    <p class="text-xs text-slate-500">সহজ ও সাবলীলভাবে আপনার সব সমস্যার সমাধান।</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div class="p-6">
+                    <div class="w-16 h-16 mx-auto bg-cyber-neon/10 border border-cyber-neon/30 text-cyber-neon rounded-full flex items-center justify-center text-3xl mb-4 shadow-[0_0_15px_rgba(0,229,255,0.15)]">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Fast Service</h3>
+                    <p class="text-gray-400 text-sm">Quick turnaround for all tasks without compromising quality in our digital workflow.</p>
                 </div>
-                <div class="bg-white p-10 rounded-3xl border border-slate-100 shadow-sm text-center">
-                    <i data-lucide="badge-percent" class="w-10 h-10 mx-auto text-blue-600 mb-6"></i>
-                    <h5 class="font-bold mb-2">সাশ্রয়ী চার্জ</h5>
-                    <p class="text-xs text-slate-500">সেরা কোয়ালিটির সার্ভিস একদম সঠিক মূল্যে।</p>
+                <div class="p-6">
+                    <div class="w-16 h-16 mx-auto bg-cyber-neon/10 border border-cyber-neon/30 text-cyber-neon rounded-full flex items-center justify-center text-3xl mb-4 shadow-[0_0_15px_rgba(0,229,255,0.15)]">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Secure Core</h3>
+                    <p class="text-gray-400 text-sm">100% data privacy and secure handling of your documents and personal information.</p>
                 </div>
-                <div class="bg-white p-10 rounded-3xl border border-slate-100 shadow-sm text-center">
-                    <i data-lucide="zap" class="w-10 h-10 mx-auto text-blue-600 mb-6"></i>
-                    <h5 class="font-bold mb-2">দ্রুত সার্ভিস</h5>
-                    <p class="text-xs text-slate-500">অপেক্ষা করার ঝামেলা ছাড়াই ঝটপট কাজ।</p>
+                <div class="p-6">
+                    <div class="w-16 h-16 mx-auto bg-cyber-neon/10 border border-cyber-neon/30 text-cyber-neon rounded-full flex items-center justify-center text-3xl mb-4 shadow-[0_0_15px_rgba(0,229,255,0.15)]">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Advanced Setup</h3>
+                    <p class="text-gray-400 text-sm">Equipped with Mac Mini, high-speed fiber optics, and premium printing hardware.</p>
                 </div>
-                <div class="bg-white p-10 rounded-3xl border border-slate-100 shadow-sm text-center">
-                    <i data-lucide="home" class="w-10 h-10 mx-auto text-blue-600 mb-6"></i>
-                    <h5 class="font-bold mb-2">বাড়ির কাছেই</h5>
-                    <p class="text-xs text-slate-500">আপনার এলাকার সবথেকে কাছের নির্ভরযোগ্য হাব।</p>
+                <div class="p-6">
+                    <div class="w-16 h-16 mx-auto bg-cyber-neon/10 border border-cyber-neon/30 text-cyber-neon rounded-full flex items-center justify-center text-3xl mb-4 shadow-[0_0_15px_rgba(0,229,255,0.15)]">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Prime Hub</h3>
+                    <p class="text-gray-400 text-sm">Easily accessible, located right beside the Marriage Registration Office in Narayanpur.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Form Section -->
-    <section id="contact" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-            <h3 class="text-xs font-black uppercase tracking-[0.4em] text-blue-600 mb-4">আপনার তথ্য</h3>
-            <h4 class="text-4xl font-black text-slate-900 italic">Contact Us Today</h4>
-        </div>
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 relative">
+        <div class="absolute inset-0 bg-[#070d1a] z-0"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white mb-2">Visual Data</h2>
+                <div class="w-20 h-1 bg-cyber-neon mx-auto rounded-full shadow-[0_0_10px_rgba(0,229,255,0.5)]"></div>
+            </div>
 
-        <div class="max-w-2xl mx-auto glass-panel rounded-3xl p-8 md:p-12">
-            <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
-                <input type="hidden" name="access_key" value="7735e1d1-b98f-46a0-a191-c33a666377b9">
-                <input type="hidden" name="subject" value="নতুন যোগাযোগ - সাহায়তা সাইবার সাপোর্ট">
-                <input type="hidden" name="from_name" value="Sahayata Cyber Support">
-                <input type="hidden" name="redirect" value="/thank-you">
-
-                <!-- নাম -->
-                <div>
-                    <label for="name" class="block text-sm font-black uppercase tracking-widest text-slate-700 mb-3">
-                        <i data-lucide="user" class="w-4 h-4 inline mr-2"></i>নাম
-                    </label>
-                    <input 
-                        type="text" 
-                        id="name" 
-                        name="name" 
-                        placeholder="আপনার সম্পূর্ণ নাম লিখুন" 
-                        class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition-all text-slate-900 placeholder-slate-400"
-                        required
-                    >
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="aspect-square rounded-xl overflow-hidden border border-cyber-border hover:border-cyber-neon transition-colors group relative">
+                    <div class="absolute inset-0 bg-cyber-neon/20 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none mix-blend-overlay"></div>
+                    <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&q=80&w=600" alt="Modern Tech Setup" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 filter brightness-90 group-hover:brightness-110">
                 </div>
-
-                <!-- মোবাইল নম্বর -->
-                <div>
-                    <label for="phone" class="block text-sm font-black uppercase tracking-widest text-slate-700 mb-3">
-                        <i data-lucide="smartphone" class="w-4 h-4 inline mr-2"></i>মোবাইল নম্বর
-                    </label>
-                    <input 
-                        type="tel" 
-                        id="phone" 
-                        name="phone" 
-                        placeholder="01x xxxx xxxx" 
-                        pattern="[0-9]{10,11}"
-                        class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition-all text-slate-900 placeholder-slate-400"
-                        required
-                    >
+                <div class="aspect-square rounded-xl overflow-hidden border border-cyber-border hover:border-cyber-neon transition-colors group relative">
+                    <div class="absolute inset-0 bg-cyber-neon/20 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none mix-blend-overlay"></div>
+                    <img src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&fit=crop&q=80&w=600" alt="Printing Services" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 filter brightness-90 group-hover:brightness-110">
                 </div>
-
-                <!-- সার্ভিস নির্বাচন -->
-                <div>
-                    <label for="service" class="block text-sm font-black uppercase tracking-widest text-slate-700 mb-3">
-                        <i data-lucide="layout-grid" class="w-4 h-4 inline mr-2"></i>আপনি কোন সার্ভিসটির জন্য অপেক্ষা করছেন?
-                    </label>
-                    <select 
-                        id="service" 
-                        name="service" 
-                        class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-600 focus:ring-2 focus:ring-blue-100 outline-none transition-all text-slate-900"
-                        required
-                    >
-                        <option value="" disabled selected>সেবা নির্বাচন করুন</option>
-                        <option value="internet">ইন্টারনেট ব্রাউজিং</option>
-                        <option value="printing">প্রিন্টিং ও স্ক্যান</option>
-                        <option value="forms">অনলাইন ফর্ম পূরণ</option>
-                        <option value="jobs">চাকরির আবেদন ও রিজিউমে</option>
-                        <option value="recharge">রিচার্জ ও বিল পেমেন্ট</option>
-                        <option value="documents">ডকুমেন্ট সহায়তা</option>
-                        <option value="other">অন্য কোন সেবা</option>
-                    </select>
+                <div class="aspect-square rounded-xl overflow-hidden border border-cyber-border hover:border-cyber-neon transition-colors group relative">
+                    <div class="absolute inset-0 bg-cyber-neon/20 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none mix-blend-overlay"></div>
+                    <img src="https://images.unsplash.com/photo-1589384267710-7a170981ca78?auto=format&fit=crop&q=80&w=600" alt="Sublimation Mugs" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 filter brightness-90 group-hover:brightness-110">
                 </div>
-
-                <!-- Submit Button -->
-                <button 
-                    type="submit" 
-                    id="submitBtn"
-                    class="w-full mt-8 px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-black rounded-2xl tech-btn shadow-lg hover:shadow-xl hover:scale-105 transition-all flex items-center justify-center gap-3 group"
-                >
-                    <i data-lucide="send" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
-                    👉 খোলার সাথে সাথে জানাবেন
-                </button>
-
-                <!-- Success Message -->
-                <div id="successMessage" class="hidden mt-6 p-4 bg-green-50 border border-green-300 rounded-xl text-green-700 text-center font-bold">
-                    <i data-lucide="check-circle" class="w-5 h-5 inline mr-2"></i>ধন্যবাদ! আমরা শীঘ্রই যোগাযোগ করব।
+                <div class="aspect-square rounded-xl overflow-hidden border border-cyber-border hover:border-cyber-neon transition-colors group relative">
+                    <div class="absolute inset-0 bg-cyber-neon/20 opacity-0 group-hover:opacity-100 transition-opacity z-10 pointer-events-none mix-blend-overlay"></div>
+                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=600" alt="Graphic Design" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 filter brightness-90 group-hover:brightness-110">
                 </div>
-
-                <!-- Loading Message -->
-                <div id="loadingMessage" class="hidden mt-6 p-4 bg-blue-50 border border-blue-300 rounded-xl text-blue-700 text-center font-bold">
-                    <i data-lucide="loader" class="w-5 h-5 inline mr-2 animate-spin"></i>পাঠানো হচ্ছে...
-                </div>
-            </form>
+            </div>
         </div>
     </section>
 
-    <!-- Location Section -->
-    <section id="location" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="glass-panel rounded-[48px] overflow-hidden flex flex-col lg:flex-row shadow-2xl border-none">
-            <div class="lg:w-1/2 p-12 md:p-16 flex flex-col justify-center">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-50 text-blue-600 text-[10px] font-black mb-6">
-                    <i data-lucide="map-pin" class="w-3 h-3"></i> LOCATION DATA
-                </div>
-                <h4 class="text-4xl md:text-5xl font-black mb-8 leading-tight italic">নারায়ণপুর / রুদ্রপুর এলাকা</h4>
-                <div class="space-y-4 text-slate-600 font-medium">
-                    <p class="flex items-center gap-3"><i data-lucide="navigation" class="text-blue-600 w-5 h-5"></i> বাদুড়িয়া, উত্তর ২৪ পরগনা</p>
-                    <p class="flex items-center gap-3"><i data-lucide="clock" class="text-blue-600 w-5 h-5"></i> প্রতিদিন সকাল ১০টা - রাত ৯টা</p>
-                </div>
-                <a href="#" class="mt-10 px-8 py-4 bg-slate-900 text-white font-black rounded-2xl flex items-center justify-center gap-3 hover:bg-blue-600 transition-colors">
-                    <i data-lucide="map" class="w-5 h-5"></i> গুগল ম্যাপে দেখুন
-                </a>
-            </div>
-            <div class="lg:w-1/2 bg-slate-100 h-[400px] lg:h-auto flex items-center justify-center">
-                <div class="text-center opacity-30">
-                    <i data-lucide="satellite-dish" class="w-20 h-20 mx-auto mb-4"></i>
-                    <p class="font-black text-xs uppercase tracking-widest">MAP_STREAM_ACTIVE</p>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 relative">
+        <div class="cyber-grid opacity-50"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="cyber-card rounded-3xl overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+                <div class="grid grid-cols-1 lg:grid-cols-2">
+                    <!-- Contact Info -->
+                    <div class="p-10 lg:p-16 flex flex-col justify-center bg-gradient-to-br from-cyber-card to-[#030712] border-r border-cyber-border/50">
+                        <h2 class="text-3xl font-bold mb-2 text-white">Establish Connection <span class="text-cyber-neon/70 text-xl font-normal block mt-1">(যোগাযোগ করুন)</span></h2>
+                        <p class="text-gray-400 mb-10">Systems online. We are ready to assist you. Drop by our hub or ping us directly.</p>
+
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-cyber-neon/10 border border-cyber-neon/30 text-cyber-neon rounded-full flex items-center justify-center flex-shrink-0 text-xl shadow-[0_0_10px_rgba(0,229,255,0.1)]">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-white">Coordinates</h4>
+                                    <p class="text-gray-400 mt-1">Narayanpur (Beside Marriage Registration Office), Rudrapur,<br>Baduria PS, North 24 Parganas,<br>West Bengal, India – 743401</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-cyber-neon/10 border border-cyber-neon/30 text-cyber-neon rounded-full flex items-center justify-center flex-shrink-0 text-xl shadow-[0_0_10px_rgba(0,229,255,0.1)]">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-white">Commlink</h4>
+                                    <a href="tel:+916294815452" class="text-gray-400 hover:text-cyber-neon mt-1 block transition-colors">+91 62948 15452</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-[#25D366]/20 border border-[#25D366]/50 text-[#25D366] rounded-full flex items-center justify-center flex-shrink-0 text-xl shadow-[0_0_15px_rgba(37,211,102,0.2)]">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-white">WhatsApp Protocol</h4>
+                                    <a href="https://wa.me/916294815452" target="_blank" class="text-gray-400 hover:text-[#25D366] mt-1 block transition-colors">Chat with us instantly</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 bg-cyber-neon/10 border border-cyber-neon/30 text-cyber-neon rounded-full flex items-center justify-center flex-shrink-0 text-xl shadow-[0_0_10px_rgba(0,229,255,0.1)]">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-white">Data Transmission</h4>
+                                    <a href="mailto:support@sahayota.top" class="text-gray-400 hover:text-cyber-neon mt-1 block transition-colors">support@sahayota.top</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map -->
+                    <div class="h-96 lg:h-auto min-h-[400px] border-l border-cyber-border/30 bg-[#030712] relative">
+                        <div class="absolute inset-0 bg-cyber-neon/5 mix-blend-screen pointer-events-none z-10"></div>
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3678.966378411036!2d88.786311!3d22.7423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f8add1652495d5%3A0xc3f587299ed47a27!2sBaduria%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            class="map-dark relative z-0"
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-16 px-6 bg-white border-t border-slate-100 text-center">
-        <div class="max-w-7xl mx-auto">
-            <img src="https://lh3.googleusercontent.com/d/1dkUVL10L9fO1aCef7G4VoyMqDvtoPp7h" alt="Logo" class="h-12 mx-auto mb-6 opacity-50 grayscale hover:grayscale-0 transition-all cursor-pointer">
-            <p class="text-sm font-black text-slate-400 uppercase tracking-[0.5em] mb-4">Sahayata Cyber Support</p>
-            <p class="text-[10px] text-slate-400 italic">Est. 2026 • Your Local Digital Partner</p>
+    <footer class="bg-[#02050a] text-gray-500 py-10 border-t border-cyber-border/30 mt-auto relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyber-neon to-transparent opacity-30"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <div class="flex items-center gap-3 justify-center md:justify-start mb-2">
+                    <div class="bg-white p-1 rounded-md shadow-[0_0_10px_rgba(0,229,255,0.2)]">
+                        <img src="https://github.com/ashhaburrahaman-dev/SCS-Landing/blob/ebfc417d9038fd291691dee46b1bea9e6abab54d/logo.png" alt="Sahayota Cyber Support Logo" class="h-8 w-auto object-contain" onerror="this.src='https://via.placeholder.com/150x50?text=Logo'">
+                    </div>
+                    <h3 class="text-white font-bold text-xl tracking-wide">
+                        Sahayota <span class="text-cyber-neon">Cyber</span> Support
+                    </h3>
+                </div>
+                <p class="mt-1 text-sm italic text-gray-600">"No Tension, We Handle Everything"</p>
+            </div>
+            
+            <div class="text-sm font-mono text-gray-600">
+                SYS.DATE: <script>document.write(new Date().getFullYear())</script> // ALL_RIGHTS_RESERVED
+            </div>
         </div>
     </footer>
 
-    <!-- WhatsApp FAB -->
-    <a href="https://wa.me/yournumber" class="fixed bottom-8 right-8 w-16 h-16 bg-[#25D366] rounded-2xl flex items-center justify-center shadow-2xl z-[100] hover:scale-110 active:scale-90 transition-all group">
-        <i data-lucide="message-circle" class="text-white w-9 h-9"></i>
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/916294815452?text=Hi%20Sahayota%20Cyber%20Support,%20I%20have%20an%20inquiry." 
+       target="_blank" 
+       class="fixed bottom-6 right-6 bg-[#25D366] text-[#030712] w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-[0_0_20px_rgba(37,211,102,0.6)] hover:bg-[#1ebe57] hover:scale-110 transition-all z-50 pulse-animation"
+       aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <script>
-        lucide.createIcons();
-        
-        // Shimmer effect variability
-        setInterval(() => {
-            const shimmer = document.querySelector('.shimmer-text');
-            if (shimmer && Math.random() > 0.9) {
-                shimmer.style.opacity = '0.8';
-                setTimeout(() => shimmer.style.opacity = '1', 100);
-            }
-        }, 200);
-
-        // Contact Form Handler
-        const contactForm = document.getElementById('contactForm');
-        const successMessage = document.getElementById('successMessage');
-        const loadingMessage = document.getElementById('loadingMessage');
-        const submitBtn = document.getElementById('submitBtn');
-
-        if (contactForm) {
-            contactForm.addEventListener('submit', async function(e) {
-                e.preventDefault();
-
-                // Show loading state
-                loadingMessage.classList.remove('hidden');
-                submitBtn.disabled = true;
-
-                try {
-                    const formData = new FormData(contactForm);
-                    
-                    const response = await fetch('https://api.web3forms.com/submit', {
-                        method: 'POST',
-                        body: formData
-                    });
-
-                    const data = await response.json();
-
-                    if (data.success) {
-                        // Hide loading
-                        loadingMessage.classList.add('hidden');
-                        
-                        // Show success message
-                        successMessage.classList.remove('hidden');
-                        contactForm.style.opacity = '0.6';
-
-                        // Reset form
-                        setTimeout(() => {
-                            contactForm.reset();
-                            contactForm.style.opacity = '1';
-                            successMessage.classList.add('hidden');
-                            submitBtn.disabled = false;
-                        }, 3000);
-                    } else {
-                        loadingMessage.classList.add('hidden');
-                        alert('কিছু সমস্যা হয়েছে। দয়া করে আবার চেষ্টা করুন।');
-                        submitBtn.disabled = false;
-                    }
-                } catch (error) {
-                    loadingMessage.classList.add('hidden');
-                    console.error('Error:', error);
-                    alert('ফর্ম পাঠাতে ত্রুটি হয়েছে।');
-                    submitBtn.disabled = false;
-                }
-            });
-        }
-    </script>
 </body>
 </html>
